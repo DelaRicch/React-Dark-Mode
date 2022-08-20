@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 import './App.css';
 
 import { BsGoogle, BsFacebook, BsLinkedin, BsTwitter, BsApple } from "react-icons/bs";
+import usePasswordToggle from './usePasswordToggle';
+import { icons } from 'react-icons';
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme)
   }
+
+  const [PasswordInputType, ToggleIcon] = usePasswordToggle()  
 
   return (
     <section className="app" data-theme={theme}>
@@ -32,7 +36,12 @@ function App() {
             <label>Email</label>
             <input type="email" placeholder='Enter your Email' required />
             <label>Password</label>
-            <input type="password" placeholder='Enter your Password' required />
+            <div className="password">
+              <input type={PasswordInputType} placeholder='Enter your Password' required />
+              <span className="password-toggle">
+                { ToggleIcon }
+              </span>
+            </div>
             <div className="remember">
               <input type="checkbox" />
               <p>Remember Me</p>
