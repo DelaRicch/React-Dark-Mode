@@ -4,7 +4,6 @@ import './App.css';
 
 import { BsGoogle, BsFacebook, BsLinkedin, BsTwitter, BsApple } from "react-icons/bs";
 import usePasswordToggle from './usePasswordToggle';
-import { icons } from 'react-icons';
 
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
   return (
     <section className="app" data-theme={theme}>
       <div className="login">
-        <h1>Login</h1>
+        <h1>Login Form</h1>
         <div className="container">
           <div className="top">
             <BsGoogle className='icon' />
